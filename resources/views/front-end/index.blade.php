@@ -90,7 +90,7 @@
             </div>
         </div>
     </section>
-
+{{--  --}}
     <section class="product__service container">
         <div class="inhome">
             Sản phẩm bán chạy
@@ -99,7 +99,7 @@
             @foreach($hots as $product)
                 <div>
                     <div class="product__item">
-                        
+
                         <div class="product__item__pic set-bg" data-setbg="/file/upload/{{$product->url_avatar}}">
                             <span class="label">Hot</span>
                             <ul class="product__hover">
@@ -121,7 +121,7 @@
                                 <img width="15px" src="/images/yellow-star.png">
                             </div>
                             <h5>
-                                {{number_format($product->price)}} 
+                                {{number_format($product->price)}}
                                 <span style="text-decoration:line-through; font-size:14px; color:grey;">
                                     {{number_format($product->price_old)}}
                                 </span>
@@ -148,7 +148,7 @@
         @foreach($news as $product)
                 <div>
                     <div class="product__item">
-                        
+
                         <div class="product__item__pic set-bg" data-setbg="/file/upload/{{$product->url_avatar}}">
                             <span class="label">New</span>
                             <ul class="product__hover">
@@ -170,7 +170,7 @@
                                 <img width="15px" src="/images/yellow-star.png">
                             </div>
                             <h5>
-                                {{number_format($product->price)}} 
+                                {{number_format($product->price)}}
                                 <span style="text-decoration:line-through; font-size:14px; color:grey;">
                                     {{number_format($product->price_old)}}
                                 </span>
@@ -197,7 +197,7 @@
         @foreach($sales as $product)
                 <div>
                     <div class="product__item">
-                        
+
                         <div class="product__item__pic set-bg" data-setbg="/file/upload/{{$product->url_avatar}}">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
@@ -219,7 +219,7 @@
                                 <img width="15px" src="/images/yellow-star.png">
                             </div>
                             <h5>
-                                {{number_format($product->price, 3)}} 
+                                {{number_format($product->price, 3)}}
                                 <span style="text-decoration:line-through; font-size:14px; color:grey;">
                                     {{number_format($product->price_old, 3)}}
                                 </span>
@@ -298,7 +298,7 @@
                 @foreach($cate_prod[$i] as $product)
                 <div>
                     <div class="product__item">
-                        
+
                         <div class="product__item__pic set-bg" data-setbg="/file/upload/{{$product->url_avatar}}">
                             @if ($product->ishot)
                                 <span class="label">Hot</span>
@@ -328,7 +328,7 @@
                                 <img width="15px" src="/images/yellow-star.png">
                             </div>
                             <h5>
-                                {{number_format($product->price)}} 
+                                {{number_format($product->price)}}
                                 <span style="text-decoration:line-through; font-size:14px; color:grey;">
                                     {{number_format($product->price_old)}}
                                 </span>
@@ -368,7 +368,7 @@
 		              <div class="meta mb-4">Love u <span class="mx-2">&bullet;</span> All time<span class="mx-2">&bullet;</span> </div>
 		              <p class="customm">{{$blogs[$i]->description }}</p>
 		              <p><a href="/view-blog">Đọc tiếp...</a></p>
-		            </div> 
+		            </div>
          		 </div>
             @endfor
         </div>
