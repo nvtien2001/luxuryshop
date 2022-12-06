@@ -33,7 +33,7 @@
 								<img src="/images/icon4.png">
 								Bạn có mã giảm giá, nhập ở đây:
 								<input id="discount" name="discount" onchange="shop.check_discount();" /> <span style="color: green" id="mess"></span>
-								<input type = "hidden" id="codediscount" name="ccode" /> 
+								<input type = "hidden" id="codediscount" name="ccode" />
 							</h6>
 							<h6 class="checkout__title">Chi tiết hoá đơn</h6>
 							<div class="row">
@@ -111,7 +111,7 @@
 									<li>Tổng <span><input value="{{$total}}" type="number" readonly="readonly"/></span></li>
 									<li>Giá sau mã <span id = "afterprice"><input value="{{$total}}" type="number" readonly="readonly"/></span></li>
 								</ul>
-								
+
 								<p>Lựa chọn phương thức thanh toán.</p>
 								<div class="checkout__input__checkbox">
 									<label for="payment"> Thẻ tín dụng <input disabled
@@ -136,3 +136,4 @@
     @include('front-end.common.footer')
 </body>
 </html>
+{{--  --}}
