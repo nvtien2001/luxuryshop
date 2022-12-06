@@ -8,7 +8,7 @@
     		text-align:center;
     		font-size:30px;
     		font-weight:bolder;
-    		text-transform: uppercase; 
+    		text-transform: uppercase;
     		color:grey;
     		margin-bottom: 40px;
     	}
@@ -69,7 +69,7 @@
 															<div style="height:71px;width: 100px;float: left;margin-right: 30px;" class="product__item__pic set-bg" data-setbg="http://placehold.it/100x60">
 														</c:otherwise>
 													</c:choose> -->
-													
+
 												</div>
 												<div class="product__cart__item__text">
 													<h6>{{$carts[$i]->title}}</h6>
@@ -80,7 +80,7 @@
 											<td class="quantity__item">
 												<div class="quantity">
 													<div class="pro-qty-2">
-														<input id="quantity_{{$carts[$i]->id}}" value="{{$carts[$i]->quantity}}" type="number" min="1" max="999" 
+														<input id="quantity_{{$carts[$i]->id}}" value="{{$carts[$i]->quantity}}" type="number" min="1" max="999"
 														onchange="cart.linh_change_quantity_product({{$carts[$i]->id}},$('#quantity_{{$carts[$i]->id}}').val(),'#price_{{$carts[$i]->id}}',{{$carts[$i]->price}});" >
 													</div>
 												</div>
@@ -110,7 +110,7 @@
 								{{-- @endif --}}
                                 <img src="/images/update.png">
 								Đặt hàng</a>
-								
+
                             </div>
                         </div>
                     </div>
@@ -127,3 +127,4 @@
 	@include('front-end.common.js')
 </body>
 </html>
+{{--  --}}
