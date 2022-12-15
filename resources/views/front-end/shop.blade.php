@@ -39,8 +39,8 @@
                   <div class="col-lg-3">
                       <div class="shop__sidebar">
                           <div class="shop__sidebar__search">
-                              <form action="/shop" method="get">
-                                  <input type="text" placeholder="Tìm kiếm..." name="keyword">
+                              <form action="{{ url('shop-search') }}" method="get">
+                                  <input type="text" placeholder="Tìm kiếm..." name="searchInput">
                                   <button type="submit"><img src="/images/search.png"></button>
                               </form>
                           </div>
@@ -88,7 +88,7 @@
                                           </div>
                                       </div>
                                   </div>
-                                
+
                                   <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseOne">Bộ sưu tập

@@ -40,7 +40,7 @@ class ShopController extends Controller
 
     public function shopSearch(Request $request) {
         $session = $request->session();
-			
+
 			if ($session->has('FILTER_MODEL')) {
 				$proFilter = $session->get('FILTER_MODEL');
 			} else {
@@ -49,6 +49,7 @@ class ShopController extends Controller
                 $proFilter->beginPrice = -1;
 			}
 
+            $search_text = $request->input("searchInput");
 			$strCategoryId = $request->input("categoryid");
 			$strCollectionId = $request->input("collectionid");
 			$strCurrentPage = $request->input("page");
@@ -56,6 +57,10 @@ class ShopController extends Controller
 			$strPriceEnd = $request->input("priceEnd");
 			$strSort = $request->input("sort");
 			$tag = $request->input("tag");
+
+            if ($search_text != null) {
+                $proFilter->searchInput = $search_text;
+            }
 
             if ($tag != null) {
                 $proFilter->tag = $tag;
@@ -74,7 +79,7 @@ class ShopController extends Controller
 				$proFilter->sort = null;
                 $proFilter->tag = null;
 			}
-			
+
 			if ($strPriceBegin != null) {
 				$proFilter->beginPrice = (int) $strPriceBegin;
 				$proFilter->sort = null;
@@ -106,6 +111,7 @@ class ShopController extends Controller
 			$collections = TblCollections::all();
             $tags = TblTagsearch::all();
 			return view('front-end.shop',[
+                'searchInput' => $proFilter->searchInput,
                 'products' => $products, 'size' => $proFilter->size, 'totalPage' => $proFilter->totalPage
                 , 'categories' => $categories, 'tags' => $tags, 'currentPage' => $proFilter->currenPage
                 , 'currentCategoryId' => $proFilter->categoryId, 'cate' => 'shop', 'price' => $proFilter->beginPrice
@@ -113,5 +119,5 @@ class ShopController extends Controller
             ]);
     }
 
-	
+
 }

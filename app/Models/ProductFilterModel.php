@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 class ProductFilterModel
 {
     // Properties
+    public $searchInput = "";
     public $name;
     public $categoryId = null;
     public $collectionId = null;
@@ -21,6 +22,9 @@ class ProductFilterModel
     public function filterProduct(ProductFilterModel $proFilter)
     {
         $sql = "SELECT * FROM tbl_products WHERE 1=1";
+        if ($proFilter->searchInput != null) {
+            $sql .= " AND title LIKE '%".$proFilter->searchInput."%'";
+        }
         if ($proFilter->categoryId != null)
             $sql .= " AND category_id = " . $proFilter->categoryId;
         if ($proFilter->collectionId != null)
@@ -36,7 +40,7 @@ class ProductFilterModel
 
         if ($proFilter->sort != null)
             $sql .= " ORDER BY price " . $proFilter->sort;
-        
+
         $allProducts = DB::select($sql);
         $offset = ($proFilter->currenPage - 1) * 9;
         $sql .= " LIMIT 9 OFFSET " . $offset;
