@@ -79,10 +79,10 @@
                                               <div class="shop__sidebar__price">
                                                   <ul>
                                                       <li><a class="@if($price==-1) {{'active'}} @endif" href="/shop-search?priceBegin=-1">Bỏ lọc</a></li>
-                                                      <li><a class="@if($price==0) {{'active'}} @endif" href="/shop-search?priceBegin=0&priceEnd=100000&page=1">0đ - 100000đ</a></li>
-                                                      <li><a class="@if($price==100000) {{'active'}} @endif" href="/shop-search?priceBegin=100000&priceEnd=500000&page=1">100000đ - 500000đ</a></li>
-                                                      <li><a class="@if($price==500000) {{'active'}} @endif" href="/shop-search?priceBegin=500000&priceEnd=1000000&page=1">500000 - 1000000</a></li>
-                                                      <li><a class="@if($price==1000000) {{'active'}} @endif" href="/shop-search?priceBegin=1000000">1000000+</a></li>
+                                                      <li><a class="@if($price==0) {{'active'}} @endif" href="/shop-search?priceBegin=0&priceEnd=100000&page=1">0đ - 100.000đ</a></li>
+                                                      <li><a class="@if($price==100000) {{'active'}} @endif" href="/shop-search?priceBegin=100000&priceEnd=500000&page=1">100.000đ - 500.000đ</a></li>
+                                                      <li><a class="@if($price==500000) {{'active'}} @endif" href="/shop-search?priceBegin=500000&priceEnd=1000000&page=1">500.000 - 1.000.000</a></li>
+                                                      <li><a class="@if($price==1000000) {{'active'}} @endif" href="/shop-search?priceBegin=1000000">1.000.000+</a></li>
                                                   </ul>
                                               </div>
                                           </div>
@@ -177,9 +177,9 @@
                                           <img width="15px" src="/images/yellow-star.png">
                                       </div>
                                       <h5>
-                                          {{$product->price}}
+                                          {{number_format($product->price)}}
                                           <span style="text-decoration:line-through; font-size:14px; color:grey;">
-                                              {{$product->price_old}}
+                                              {{number_format($product->price_old)}}
                                           </span>
                                       </h5>
                                       <div class="product__color__select">
