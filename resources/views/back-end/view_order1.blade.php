@@ -32,29 +32,36 @@
                 <div class="right">
                     <div class="right__content">
                         <div class="right__title">Bảng điều khiển</div>
-                        <p class="right__desc">Xem bộ sưu tập <a href="/admin/collection-add"><button type="button" class="add btn-outline-dark">Thêm bộ sưu tập</button></a></p>
-
+                        <p class="right__desc">Xem đơn hàng </p>
                         <div class="right__table">
                             <div class="right__tableWrapper">
                                 <table id="myTable">
                                     <thead>
                                         <tr>
                                             <th scope="col">STT</th>
-                                            <th scope="col">Tiêu đề</th>
-                                            <th scope="col">Mô tả</th>
-                                            <th scope="col">Sửa</th>
+                                            <th scope="col">Tên</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Địa chỉ</th>
+                                            <th scope="col">Trạng thái đơn</th>
+                                            <th scope="col">Tổng tiền</th>
+                                            <th scope="col">Giao hàng thành công</th>
                                             <th scope="col">Xoá</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach($collections as $collection)
+                                        @foreach($orders as $order)
 	                                        <tr>
 	                                            <td data-label="STT" scope="row">{{$loop->iteration}}</td>
-	                                            <td data-label="Tiêu đề">{{$collection->name}}</td>
-	                                            <td data-label="Mô tả">{{$collection->description}}</td>
-	                                            <td data-label="Sửa" class="right__iconTable"><a href="/admin/collections/{{$collection->id}}"><img src="/assets/icon-edit.svg" alt=""></a></td>
-	                                            <td data-label="Xoá" class="right__iconTable"><a onclick="myFunction({{$collection->id}})"><img src="/assets/icon-trash-black.svg" alt=""></a></td>
+	                                            <td data-label="Tên">{{$order->customer_name}}</td>
+	                                            <td data-label="Email">{{$order->customer_email}}</td>
+                                                <td data-label="Phone">{{$order->customer_phone}}</td>
+                                                <td data-label="Địa chỉ">{{$order->customer_address}}</td>
+                                                <td data-label="Trạng thái đơn">{{$order->isCancel}}</td>
+                                                <td data-label="Tổng tiền">{{$order->total_received}}</td>
+                                                <td data-label="Giao hàng thành công" class="right__iconTable"><a onclick="myFunction1({{$order->id}})"><img src="/assets/icon-edit.svg" alt=""></a></td>
+	                                            <td data-label="Xoá" class="right__iconTable"><a onclick="myFunction({{$order->id}})"><img src="/assets/icon-trash-black.svg" alt=""></a></td>
 	                                        </tr>
                                        @endforeach
 
@@ -71,11 +78,19 @@
 	<script type="text/javascript" src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 	<script>
 	function myFunction(id){
-		  var r = confirm("Bạn có muốn xoá bộ sưu tập này ?");
+		  var r = confirm("Bạn có muốn xoá đơn hàng này ?");
 		  if (r == true) {
-		    window.location = "/admin/collection-delete/" + id;
+		    window.location = "/admin/order-delete/" + id;
 		  } else {
-		    window.location = "/admin/collections";
+		    window.location = "/admin/orders";
+		  }
+	}
+    function myFunction1(id){
+		  var r = confirm("Bạn có muốn xác nhận giao thành công đơn hàng này ?");
+		  if (r == true) {
+		    window.location = "/admin/order-update/" + id;
+		  } else {
+		    window.location = "/admin/orders";
 		  }
 	}
 

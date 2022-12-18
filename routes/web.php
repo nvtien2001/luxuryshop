@@ -93,6 +93,9 @@ Route::prefix('admin')->middleware('admin')->group(function(){
     Route::post('/decentralization-add', [AdminDecentralizationController::class, 'add']);
 
     Route::get('/orders', [AdminOrderController::class, 'view']);
+    Route::get('/order-delete/{id}', [AdminOrderController::class, 'delete']);
+    Route::get('/order-update/{id}', [AdminOrderController::class, 'update']);
+    Route::get('/orders-done', [AdminOrderController::class, 'view1']);
 });
 
 Auth::routes();

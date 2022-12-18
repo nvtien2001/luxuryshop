@@ -14,9 +14,9 @@
     	background-color: white;
     	margin-bottom: 20px;
     	font-weight: bolder;
-    	
+
     }
-    
+
     .add:hover{
     	background-color:black;
     	color:white;
@@ -46,7 +46,7 @@
                                             <th scope="col">Xoá</th>
                                         </tr>
                                     </thead>
-                            
+
                                     <tbody>
                                         @foreach($customers as $customer)
 	                                        <tr>
@@ -58,7 +58,7 @@
 	                                            <td data-label="Xoá" class="right__iconTable"><a onclick="myFunction({{$customer->id}})"><img src="/assets/icon-trash-black.svg" alt=""></a></td>
 	                                        </tr>
                                        @endforeach
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -72,7 +72,7 @@
 	<script type="text/javascript" src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 	<script>
 	function myFunction(id){
-		  var r = confirm("Bạn có muốn xoá danh mục này ?");
+		  var r = confirm("Bạn có muốn xoá khách hàng này ?");
 		  if (r == true) {
 		    window.location = "/admin/customer-delete/" + id;
 		  } else {

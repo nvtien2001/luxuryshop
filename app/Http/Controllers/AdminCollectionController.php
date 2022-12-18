@@ -40,7 +40,7 @@ class AdminCollectionController extends Controller
 
     public function delete($id) {
         TblProducts::where('collection_id', $id)->update([
-            'collection_id' => -1
+            'collection_id' => null
         ]);
         TblCollections::where('id', $id)->delete();
         return redirect('/admin/collections');
