@@ -14,9 +14,9 @@
     	background-color: white;
     	margin-bottom: 20px;
     	font-weight: bolder;
-    	
+
     }
-    
+
     .add:hover{
     	background-color:black;
     	color:white;
@@ -56,7 +56,7 @@
 	                                            <td data-label="Sửa" class="right__iconTable"><a href="/admin/slides/{{$slide->id}}"><img src="/assets/icon-edit.svg" alt=""></a></td>
 	                                            <td data-label="Xoá" class="right__iconTable"><a href="javascript:void(0)" onclick="myFunction({{$slide->id}})"><img src="/assets/icon-trash-black.svg" alt=""></a></td>
                                         	</tr>
-                                        @endforeach                                       
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -70,14 +70,14 @@
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script>
 		function myFunction(id){
-			  var r = confirm("Bạn có muốn xoá sản phẩm này ?");
+			  var r = confirm("Bạn có muốn xoá slide này ?");
 			  if (r == true) {
 			    window.location = "/admin/slides-delete/" + id;
 			  } else {
 			    window.location = "/admin/slides";
 			  }
 		}
-		
+
 		$(document).ready( function () {
 		    $('#myTable').DataTable();
 		} );

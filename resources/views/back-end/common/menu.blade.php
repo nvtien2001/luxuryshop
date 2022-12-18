@@ -19,7 +19,7 @@
                 <div class="left__text">
                     <a class="left__link" href="/admin/product-add">Thêm Sản Phẩm</a>
                     <a class="left__link" href="/admin/products">Xem Sản Phẩm</a>
-                        
+
                 </div>
             </li>
             <li class="left__menuItem">
@@ -44,7 +44,16 @@
                 </div>
             </li>
             <li class="left__menuItem"><a href="/admin/customers" class="left__title"><img src="/assets/icon-users.svg" alt="">Khách Hàng</a></li>
-            <li class="left__menuItem"><a href="/admin/orders" class="left__title"><img src="/assets/icon-book.svg" alt="">Đơn Đặt Hàng</a></li>
+            <!-- <li class="left__menuItem"><a href="/admin/orders" class="left__title"><img src="/assets/icon-book.svg" alt="">Đơn Đặt Hàng</a></li> -->
+            <li class="left__menuItem">
+                <div class="left__title">
+                    <img src="/assets/icon-book.svg" alt="">Đơn Đặt Hàng<img class="left__iconDown" src="/assets/arrow-down.svg" alt="">
+                </div>
+                <div class="left__text">
+                    <a class="left__link" href="/admin/orders">Đơn chưa giao</a>
+                    <a class="left__link" href="/admin/orders-done">Đơn thành công</a>
+                </div>
+            </li>
             <li class="left__menuItem">
                 <div class="left__title">
                     <img src="/assets/icon-pencil.svg" alt="">Bộ sưu tập<img class="left__iconDown" src="/assets/arrow-down.svg" alt="">

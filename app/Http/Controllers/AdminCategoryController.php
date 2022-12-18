@@ -40,7 +40,8 @@ class AdminCategoryController extends Controller
 
     public function delete($id) {
         TblProducts::where('category_id', $id)->update([
-            'category_id' => -1
+            //'category_id' => -1
+            'category_id' => null
         ]);
         TblCategorys::where('id', $id)->delete();
         return redirect('/admin/categories');

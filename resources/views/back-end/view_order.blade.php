@@ -37,7 +37,7 @@
                                     </thead>
 
                                     <tbody>
-                                        @for($i=0;$i < count($orders); $i++) 
+                                        @for($i=0;$i < count($orders); $i++)
                                             <tr>
                                             <td data-label="STT" rowspan="{{count($order_prod[$i]) + 1}}">{{$i + 1}}</td>
                                             <td data-label="Tên" rowspan="{{count($order_prod[$i]) + 1}}">{{$orders[$i]->customer_name}}</td>
